@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:nutriai/analytics.dart';
 import 'package:nutriai/home.dart';
 import 'package:nutriai/profile.dart';
 import 'package:nutriai/scan.dart';
@@ -44,7 +45,7 @@ class _HomeBarState extends State<HomeBar> {
     Home(),
     Search(),
     Scan(),
-    Text('Stats'),
+   Analytics(),
     Profile(),
   ];
 
@@ -81,7 +82,7 @@ class _HomeBarState extends State<HomeBar> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.document_scanner_outlined), label: 'Scan'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.graphic_eq_sharp), label: 'Stats'),
+                icon: Icon(Icons.graphic_eq_sharp), label: 'Analytics'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_outline), label: 'Person'),
           ],
