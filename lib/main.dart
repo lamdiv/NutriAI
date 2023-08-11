@@ -7,15 +7,13 @@ import 'package:nutriai/scan.dart';
 import 'package:nutriai/search.dart';
 import 'package:camera/camera.dart';
 
-List<CameraDescription> cameras = [];
+late List<CameraDescription> cameras = [];
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  try {
-    cameras = await availableCameras();
-  } on CameraException catch (e) {
-    print(e.code);
-  }
+
+  cameras = await availableCameras();
+
   runApp(const MyApp());
 }
 
@@ -46,7 +44,7 @@ class _HomeBarState extends State<HomeBar> {
     Home(),
     Search(),
     Scan(),
-   Analytics(),
+    Analytics(),
     Profile(),
   ];
 
