@@ -1,5 +1,37 @@
-
 import 'package:flutter/material.dart';
+
+final List<Map<String, String>> foodItems = [
+  {
+    'name': 'Apple Pie',
+    'image':
+        'https://cdn.pixabay.com/photo/2015/06/10/19/56/apples-805124_640.jpg'
+  },
+  {
+    'name': 'Banana Oats',
+    'image':
+        'https://cdn.pixabay.com/photo/2015/08/20/20/07/cereal-898073_640.jpg'
+  },
+  {
+    'name': 'Cherry Juice',
+    'image':
+        'https://media.istockphoto.com/id/614842302/photo/cherry-juice-with-fresh-berries.webp?b=1&s=612x612&w=0&k=20&c=k2WqDhfmqpHsf5OEWGiLlhd7AkKw7toJGnhLB3Shawo='
+  },
+  {
+    'name': 'Dried Date',
+    'image':
+        'https://media.istockphoto.com/id/542563100/photo/bowl-of-dried-dates.webp?b=1&s=612x612&w=0&k=20&c=2FPYT-UIB2RVcZB_2oUjgyjAMuaqCWKt8FcESIbr5qs='
+  },
+  {
+    'name': 'Eggplant',
+    'image':
+        'https://cdn.pixabay.com/photo/2016/09/10/17/47/eggplant-1659784_1280.jpg'
+  },
+  {
+    'name': 'Fig',
+    'image':
+        'https://cdn.pixabay.com/photo/2017/02/19/09/20/figs-2079166_640.jpg'
+  },
+];
 
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
@@ -75,8 +107,8 @@ class _SearchState extends State<Search> {
               ),
             ),
             Expanded(
-              child: SingleChildScrollView(
-                  child: GridView.builder(
+                child: SingleChildScrollView(
+              child: GridView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -85,7 +117,8 @@ class _SearchState extends State<Search> {
                   mainAxisSpacing: 10.0,
                   crossAxisSpacing: 10.0,
                 ),
-                itemCount: 8,
+                itemCount:
+                    foodItems.length, // Use the length of the foodItems list
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
@@ -96,79 +129,76 @@ class _SearchState extends State<Search> {
                       // );
                     },
                     child: Container(
-                        padding: const EdgeInsets.all(5.0),
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10.0),
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color(0xFFFAF5FF),
-                            ),
-                          ],
+                      padding: const EdgeInsets.all(5.0),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10.0),
                         ),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(25, 249, 87, 249),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 100,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: NetworkImage(foodItems[index]['image']!),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 2,
+                          ),
+                          Text(
+                            foodItems[index]['name']!,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF323232),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 2,
+                          ),
+                          const Row(
                             children: [
-                              Container(
-                                height: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    image: const DecorationImage(
-                                      image: NetworkImage(
-                                          'https://familydoctor.org/wp-content/uploads/2010/05/shutterstock_300553067.jpg'),
-                                      fit: BoxFit.cover,
-                                    )),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                'Food Name',
+                              Text(
+                                'Nutri Star',
                                 style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFF323232)),
+                                  color: Color(0xFFED9BED),
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                              const SizedBox(
-                                height: 5,
+                              SizedBox(
+                                width: 10,
                               ),
-                              const Row(
+                              Wrap(
                                 children: [
-                                  Text(
-                                    'Nutri Star',
-                                    style: TextStyle(color: Color(0xFF7B4EA8)),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Wrap(
-                                    children: [
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.amber,
-                                        size: 16,
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.amber,
-                                        size: 16,
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.amber,
-                                        size: 16,
-                                      )
-                                    ],
-                                  )
+                                  Icon(Icons.star,
+                                      color: Colors.amber, size: 16),
+                                  Icon(Icons.star,
+                                      color: Colors.amber, size: 16),
+                                  Icon(Icons.star,
+                                      color: Colors.amber, size: 16),
                                 ],
                               )
-                            ])),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   );
                 },
-              )),
-            ),
+              ),
+            )),
           ],
         ),
       ),

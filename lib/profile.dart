@@ -18,9 +18,7 @@ class _ProfileState extends State<Profile> {
           const Text(
             'Your Info',
             style: TextStyle(
-                color: Colors.black,
-                fontSize: 22,
-                fontWeight: FontWeight.bold),
+                color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 20,
@@ -34,7 +32,7 @@ class _ProfileState extends State<Profile> {
                 direction: Axis.vertical,
                 children: [
                   const Text(
-                    'Name: Diwash Lamichhane',
+                    'Name: John Doe',
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -46,13 +44,13 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                   const Text(
-                    'Weight: 50 kg',
+                    'Weight: 64 kg',
                     style: TextStyle(
                       fontSize: 18,
                     ),
                   ),
                   const Text(
-                    'Height: 185cm',
+                    'Height: 180cm',
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -73,16 +71,16 @@ class _ProfileState extends State<Profile> {
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Color(0xFFFAF5FF),
+                              color: Color.fromARGB(47, 175, 100, 150),
                             ),
                           ],
                         ),
                         child: const Text(
-                          'Tuberculosis',
+                          'Covid 19',
                           style: TextStyle(
-                            color: Color(0xFF7B4EA8),
-                            fontSize: 18,
-                          ),
+                              color: Color(0xFF330022),
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
@@ -91,8 +89,8 @@ class _ProfileState extends State<Profile> {
               ),
               TextButton(
                 style: TextButton.styleFrom(
-                  primary: const Color(0xFF7B4EA8),
-                  backgroundColor: const Color(0xFF7B4EA8),
+                  primary: const Color(0xFF330022),
+                  backgroundColor: const Color(0xFF330022),
                   minimumSize: const Size(100, 50),
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   shape: const RoundedRectangleBorder(

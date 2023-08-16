@@ -62,12 +62,9 @@ class _HomeBarState extends State<HomeBar> {
           centerTitle: true,
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           elevation: 0,
-          title: const Text(
-            'NutriAI',
-            style: TextStyle(
-              color: Color(0xFF7B4EA8),
-              fontWeight: FontWeight.bold,
-            ),
+          title: Image.asset(
+            'assets/images/logo.png', // Replace with the path to your image
+            fit: BoxFit.cover,
           ),
         ),
         body: _widgetOptions.elementAt(_selectedIndex),
@@ -88,7 +85,7 @@ class _HomeBarState extends State<HomeBar> {
           showSelectedLabels: true,
           showUnselectedLabels: false,
           currentIndex: _selectedIndex,
-          selectedItemColor: const Color(0xFF7B4EA8),
+          selectedItemColor: const Color(0xFFED9BED),
           selectedIconTheme: const IconThemeData(size: 30),
           onTap: _onItemTapped,
           elevation: 0,

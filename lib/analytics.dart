@@ -24,23 +24,20 @@ class _AnalyticsState extends State<Analytics> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-
             const SizedBox(
               height: 25,
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-               TextButton(
+                TextButton(
                   style: TextButton.styleFrom(
-                    primary: const Color(0xFF7B4EA8),
-                    backgroundColor: const Color(0xFF7B4EA8),
+                    primary: const Color(0xFFED9BED),
+                    backgroundColor: const Color(0xFF330022),
                     minimumSize: const Size(90, 40),
                     padding: const EdgeInsets.symmetric(horizontal: 12.0),
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
-
                     ),
                   ),
                   onPressed: () {
@@ -50,33 +47,28 @@ class _AnalyticsState extends State<Analytics> {
                     //       builder: (context) => const DetailScreen()),
                     // );
                   },
-                  child: const Text('Today', style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.white
-                  ),),
+                  child: const Text(
+                    'Today',
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+                  ),
                 ),
-               const Text(
-                'Last 7 days',
-                style: TextStyle(
-
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ),
-             const Text(
-                'Last Month',
-                style: TextStyle(
-
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],),
+                const Text(
+                  'Last 7 days',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                const Text(
+                  'Last Month',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
             const SizedBox(
               height: 15,
             ),
             Container(
               width: double.infinity,
               height: 250,
-             child: BarChartSample3(),
+              child: BarChartSample3(),
             ),
             const SizedBox(
               height: 25,
@@ -89,160 +81,146 @@ class _AnalyticsState extends State<Analytics> {
                   fontWeight: FontWeight.bold),
             ),
             Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.only(top: 10),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10.0),
+              width: double.infinity,
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(top: 10),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+                boxShadow: [BoxShadow(color: Color.fromARGB(25, 249, 87, 249))],
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xFFFAF5FF)
-                )
-              ],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Protein',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFED9BED)),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        '100mg',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: Color(0xFF555555)),
+                      ),
+                      Text(
+                        'Normal',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: Color(0xFF00B26E)),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-               const Text(
-                  'Protein',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF7B4EA8)),
-                ),
-               const SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      '100mg',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: Color(0xFF555555)),
-                    ),
-                    Text(
-                      'Normal',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: Color(0xFF00B26E)),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
             Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.only(top: 10),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10.0),
+              width: double.infinity,
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(top: 10),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+                boxShadow: [BoxShadow(color: Color.fromARGB(25, 249, 87, 249))],
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xFFFAF5FF)
-                )
-              ],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Sodium',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFED9BED)),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        '200mg',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: Color(0xFF555555)),
+                      ),
+                      Text(
+                        'Danger',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.red),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-               const Text(
-                  'Sodium',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF7B4EA8)),
-                ),
-               const SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      '200mg',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: Color(0xFF555555)),
-                    ),
-                    Text(
-                      'Danger',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.red),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
             Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.only(top: 10),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10.0),
+              width: double.infinity,
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(top: 10),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+                boxShadow: [BoxShadow(color: Color.fromARGB(25, 249, 87, 249))],
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xFFFAF5FF)
-                )
-              ],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Carbohydrates',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFFED9BED)),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        '200mg',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: Color(0xFF555555)),
+                      ),
+                      Text(
+                        'Low',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.orange),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-               const Text(
-                  'Carbohydrates',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF7B4EA8)),
-                ),
-               const SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      '200mg',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: Color(0xFF555555)),
-                    ),
-                    Text(
-                      'Low',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.orange),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-
           ],
         ),
       ),
     );
   }
 }
-
 
 class _BarChart extends StatelessWidget {
   const _BarChart({Key? key}) : super(key: key);
@@ -287,7 +265,7 @@ class _BarChart extends StatelessWidget {
 
   Widget getTitles(double value, TitleMeta meta) {
     const style = TextStyle(
-      color: Color(0xff7589a2),
+      color: Colors.white,
       fontWeight: FontWeight.bold,
       fontSize: 14,
     );
@@ -390,7 +368,6 @@ class _BarChart extends StatelessWidget {
           ],
           showingTooltipIndicators: [0],
         ),
-      
       ];
 }
 
@@ -409,7 +386,7 @@ class BarChartSample3State extends State<BarChartSample3> {
       child: Card(
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-        color: Color(0xFF7B4EA8),
+        color: Color(0xFF330022),
         child: const _BarChart(),
       ),
     );

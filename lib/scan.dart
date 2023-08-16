@@ -133,12 +133,17 @@ class _ScanState extends State<Scan> {
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.pop(context, 'Cancel'),
-              child: const Text('Cancel'),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(color: Color.fromARGB(163, 51, 0, 34)),
+              ),
             ),
             TextButton(
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const Analytics())),
-              child: const Text('Add'),
+              child: const Text('Add',
+                  style: TextStyle(
+                      color: Color(0xff330022), fontWeight: FontWeight.bold)),
             ),
           ],
         ),
@@ -158,7 +163,7 @@ class _ScanState extends State<Scan> {
           // height: MediaQuery.of(context).size.height - 00,
           child: Center(
               child: CircularProgressIndicator(
-            color: Color(0xFF7B4EA8),
+            color: Color(0xFFED9BED),
           )));
     }
     return SizedBox(
@@ -193,7 +198,7 @@ class _ScanState extends State<Scan> {
                       //     TextButton(
                       //       style: TextButton.styleFrom(
                       //         primary: Colors.white,
-                      //         backgroundColor: const Color(0xFF7B4EA8),
+                      //         backgroundColor: const Color(0xFFED9BED),
                       //         minimumSize: const Size(75, 28),
                       //         padding: const EdgeInsets.symmetric(
                       //             horizontal: 16.0),
@@ -242,7 +247,7 @@ class _ScanState extends State<Scan> {
                               color: Colors.white,
                               shadows: [
                                 BoxShadow(
-                                  color: Color.fromARGB(223, 140, 146, 228),
+                                  color: Color(0xFFED9BED),
                                   spreadRadius: 7,
                                   blurRadius: 15,
 
